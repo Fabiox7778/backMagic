@@ -1,5 +1,6 @@
 
 import express, { json } from "express";
+import bruxos from "./src/data/bruxos.js";
 
 const serverPort = 3000;
 const app = express().use(json());
@@ -49,6 +50,10 @@ app.get('/casas', (req, res) => {
     ]
   });
 });
+
+app.get("/bruxos", (req, res) => {
+    res.json(bruxos)
+})
 
 
 app.listen(serverPort, () => {
